@@ -7,13 +7,12 @@ steps:
 - task: TerraformInstaller@1
   inputs:
     terraformVersion: 'latest'
-
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/infra'
-    backendServiceArm: 'Azure subscription 1(f7d28834-9c52-41d7-adc6-8ae678eef59f)'
-    backendAzureRmStorageAccountName: 'backend'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/tezzz'
+    backendServiceArm: 'gaurav-1'
+    backendAzureRmStorageAccountName: 'backendga'
     backendAzureRmContainerName: 'tfstatefile'
     backendAzureRmKey: 'new.tfstate'
