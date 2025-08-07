@@ -15,14 +15,13 @@ steps:
   inputs:
     terraformVersion: 'latest'
 
-- task: AzureCLI@2
+
+- task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'gaurav-1'  # ← use same name as you give while creating
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
+    ScriptType: 'InlineScript'
+    Inline: |
       echo "Logged into Azure"
-      az account show
+            az account show
 
 
 - task: TerraformTask@5
