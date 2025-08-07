@@ -6,12 +6,14 @@ terraform {
     }
   }
 
+
   backend "azurerm" {
-    resource_group_name  = "backend"
-    storage_account_name = "backendblock123"
-    container_name       = "backendtf"
-    key                  = "terraform.tfstate"
+    storage_account_name = "backend"
+    container_name       = "tfstatefile"
+    key                  = "new.tfstate"
+    use_msi              = true
   }
+
 }
 
 provider "azurerm" {
