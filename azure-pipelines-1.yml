@@ -15,22 +15,13 @@ steps:
   inputs:
     terraformVersion: 'latest'
 
-
-- task: AzurePowerShell@5
-  inputs:
-    ScriptType: 'InlineScript'
-    Inline: |
-      echo "Logged into Azure"
-            az account show
-
-
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/infra'
-    backendServiceArm: 'gaurav-1'
-    backendAzureRmStorageAccountName: 'backend'
+    backendServiceArm: 'Gaurav_pipeline'
+    backendAzureRmStorageAccountName: 'backendga'
     backendAzureRmContainerName: 'tfstatefile'
     backendAzureRmKey: 'new.tfstate'
 
