@@ -28,10 +28,10 @@ module "Subnet" {
   #source = "../modules/NIC"
 
 }
-module "VM" {
-    depends_on = [ module.NIC ]
+# module "VM" {
+  #  depends_on = [ module.NIC ]
 
-  source = "../modules/VM"
+  # source = "../modules/VM"
 
 }
 
