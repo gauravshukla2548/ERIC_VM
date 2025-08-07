@@ -25,3 +25,18 @@ steps:
     backendAzureRmContainerName: 'tfstatefile'
     backendAzureRmKey: 'new.tfstate'
 
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/infra'
+    environmentServiceNameAzureRM: 'Gaurav_pipeline'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/infra'
+    environmentServiceNameAzureRM: 'Gaurav_pipeline'
+
