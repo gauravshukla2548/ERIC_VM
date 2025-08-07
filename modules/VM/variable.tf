@@ -34,7 +34,10 @@ variable "admin_password" {
   description = "The administrator password for the virtual machine"
   type        = string
   default     = "P@ssw0rd1234!"
+  sensitive   = true
 }
+
+
 
 variable "nic_name" {
   description = "The name of the network interface"
