@@ -52,6 +52,7 @@ variable "subnet_name" {
   default     = "eric-subnet"       
   
 }
+
 variable "vnet_name" {
   description = "The name of the virtual network to which the subnet belongs"
   type        = string
