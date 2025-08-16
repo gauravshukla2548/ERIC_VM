@@ -1,0 +1,18 @@
+trigger: none
+
+pool:
+  name: MYJAAN
+
+steps:
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    backendServiceArm: 'gaurav-1'
+    backendAzureRmStorageAccountName: 'backendga'
+    backendAzureRmContainerName: 'tfstatefile'
+    backendAzureRmKey: 'new.tfstate'
