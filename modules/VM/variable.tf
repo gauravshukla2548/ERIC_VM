@@ -53,7 +53,6 @@ variable "subnet_name" {
   
 }
 
-
 variable "vnet_name" {
   description = "The name of the virtual network to which the subnet belongs"
   type        = string
